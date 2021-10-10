@@ -1,11 +1,6 @@
 #ifndef _ALGO_ATUMR_GENERIC_H_
 #define _ALGO_ATUMR_GENERIC_H_
 
-#include <cstdio>
-#include <cstdint>
-#include <cassert>
-#include <cstdlib>
-
 
 namespace atumr
 {
@@ -21,6 +16,7 @@ namespace atumr
     {
         return a < b ? a : b;
     }
+
 
     template <typename T>
     static inline void swap(T &a, T &b)
