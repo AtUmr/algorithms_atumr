@@ -22,8 +22,8 @@ namespace atumr
     static inline void swap(T &a, T &b)
     {
         T _t(a);
-        x = y;
-        y = _t;
+        a = b;
+        b = _t;
     }
 
 }
