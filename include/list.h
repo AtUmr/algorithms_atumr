@@ -1,44 +1,36 @@
 #ifndef _ALGO_ATUMR_LIST_H_
 #define _ALGO_ATUMR_LIST_H_
 
-namespace atumr
-{
+namespace atumr{
     
     template <typename T>
-    class List 
-    {
+    class List {
         private:
-            class ListNode 
-            {
+            class ListNode {
 
             }
         
         public:
-            class const_iterator 
-            {
+            class const_iterator {
 
             }
 
-            class iterator : public const_iterator 
-            {
+            class iterator : public const_iterator {
 
             }
         
         public:
-            List()
-            {
+            List(){
                 initialize() ;
             }
 
-            ~List()
-            {
+            ~List(){
                 clear();
                 delete _head;
                 delete _tail;
             }
 
-            void clear()
-            {
+            void clear(){
                 
             }
         
@@ -47,8 +39,7 @@ namespace atumr
             ListNode *_head;
             ListNode *_tail;
 
-            void initialize() 
-            {
+            void initialize() {
                 _size = 0;
                 _head = new ListNode;
                 _tail = new ListNode;
