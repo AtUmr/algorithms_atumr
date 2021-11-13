@@ -20,7 +20,9 @@ namespace atumr{
             }
 
             ~Stack(){
-                delete [] _elements;
+                if(_elements!=nullptr){
+                    delete [] _elements;
+                }
             }
 
             const bool empty(){
@@ -45,7 +47,11 @@ namespace atumr{
                 if(empty()){
                     return;
                 }
-                _size--;
+                --_size;
+            }
+
+            void clear(){
+                _size=0;
             }
 
             const uint32_t size(){

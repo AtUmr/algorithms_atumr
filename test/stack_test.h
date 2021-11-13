@@ -34,10 +34,51 @@ TEST_F(StackTest, PushStackTest){
 
 TEST_F(StackTest, PopStackTest){
     for(int i=0;i<10;++i) {
+        stack_0.push(i);
+    }
+    EXPECT_EQ(stack_0.size(), 10);
+    EXPECT_EQ(stack_0.top(), 9);
+    
+    for(int i=0;i<10;++i) {
         EXPECT_EQ(stack_0.top(), 9-i);
         stack_0.pop();
         EXPECT_EQ(stack_0.size(), 9-i);
     }
+    EXPECT_TRUE(stack_0.empty());
+    EXPECT_EQ(stack_0.size(), 0);
+}
+
+TEST_F(StackTest, ClearStackTest){
+    for(int i=0;i<10;++i) {
+        stack_0.push(i);
+    }
+    EXPECT_EQ(stack_0.size(), 10);
+    stack_0.clear();
+    EXPECT_TRUE(stack_0.empty());
+    EXPECT_EQ(stack_0.size(), 0);
+}
+
+TEST_F(StackTest, ComprehensionStackTest){
+    for(int i=0;i<10;++i) {
+        stack_0.push(i);
+    }
+    EXPECT_EQ(stack_0.size(), 10);
+    EXPECT_EQ(stack_0.top(), 9);
+    
+    for(int i=0;i<5;++i) {
+        EXPECT_EQ(stack_0.top(), 9-i);
+        stack_0.pop();
+        EXPECT_EQ(stack_0.size(), 9-i);
+    }
+    EXPECT_EQ(stack_0.size(), 5);
+
+    for(int i=0;i<5;++i) {
+        stack_0.push(i);
+    }
+    EXPECT_EQ(stack_0.size(), 10);
+    EXPECT_EQ(stack_0.top(), 4);
+
+    stack_0.clear();
     EXPECT_TRUE(stack_0.empty());
     EXPECT_EQ(stack_0.size(), 0);
 }
