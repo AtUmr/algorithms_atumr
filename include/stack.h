@@ -9,11 +9,11 @@ namespace atumr{
     class Stack {
         public:
             Stack(uint32_t capacity=defaultCapacity)
-                : _capacity{capacity}, _size{0}, _elements{new T[capacity]}{
+                : _capacity{capacity}, _size{0}, _elements{new T[_capacity]}{
             }
             
             Stack(const Stack &other)
-                :_capacity{other._capacity}, _size{other._size}, _elements(new T[capacity]){
+                :_capacity{other._capacity}, _size{other._size}, _elements(new T[_capacity]){
                 for(uint32_t i=0; i<_capacity; ++i){
                     _elements[i] = other._elements[i];
                 }
@@ -35,7 +35,7 @@ namespace atumr{
             }
 
             void push(const T& element){
-                if(_size==capacity){
+                if(_size==_capacity){
 
                 }
                 _elements[_size++] = element;
@@ -57,7 +57,7 @@ namespace atumr{
             uint32_t _size;
             T *_elements;
 
-    }
+    };
 }
 
 #endif
