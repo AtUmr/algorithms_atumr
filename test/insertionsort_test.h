@@ -1,8 +1,6 @@
 #ifndef ALGO_ATUMR_INSERTIONSORT_TEST_H
 #define ALGO_ATUMR_INSERTIONSORT_TEST_H
 
-#include<iostream>
-
 #include <gtest/gtest.h>
 
 #include "../include/insertionsort.h"
