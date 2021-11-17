@@ -3,12 +3,12 @@
 
 namespace atumr{
 
-    const uint32_t defaultCapacity = 100;
+    const uint32_t kDefaultStackCapacity = 100;
 
     template<typename T>
     class Stack {
         public:
-            Stack(uint32_t capacity=defaultCapacity)
+            Stack(uint32_t capacity=kDefaultStackCapacity)
                 : _capacity{capacity}, _size{0}, _elements{new T[_capacity]}{
             }
             
