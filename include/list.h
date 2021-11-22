@@ -9,6 +9,7 @@ namespace atumr{
   class List {
     private:
       class ListNode {
+        public:
         ListNode(const T & obj = T{},
                         ListNode &pNext = nullptr,
                         ListNode &pPrev = nullptr)
@@ -18,6 +19,13 @@ namespace atumr{
                         ListNode &pNext = nullptr,
                         ListNode &pPrev = nullptr)
               : element(std::move(obj)), next(pNext), prev(pPrev) {}
+        
+        private:
+          T element;
+          ListNode* next;
+          ListNode* prev;
+
+          friend class List<T>;
       }
     
     public:
@@ -41,7 +49,7 @@ namespace atumr{
       }
 
       void clear(){
-        
+        while
       }
     
     private:
@@ -53,9 +61,10 @@ namespace atumr{
         _size = 0;
         _head = new ListNode;
         _tail = new ListNode;
-
+        _head->next = _tail;
+        _tail->prev = _head;
       }
-  }
+  };
 
 }
 
